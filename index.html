@@ -1,0 +1,811 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta name="google-site-verification" content="ftFOlJETX-2KNjaPh8W6s8lhigItRuu9fOmjHZZ0nY0" />
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <title>CampNet: Context-Aware Mask Prediction for End-to-End Text-Based Speech Editing</title>
+</head>
+<style type="text/css">
+  table {
+    width: 100%;
+    table-layout: fixed;
+  }
+  
+
+  audio {
+    width: 100%;
+  }
+
+
+
+  
+  @media (max-width: 767px) {
+    .big-screen {
+      display: none;
+    }
+  }
+
+  @media (min-width: 767px) {
+    .small-screen {
+      display: none;
+    }
+  }
+</style>
+
+
+
+
+<body>
+
+  <header class="header">
+    <div class="jumbotron bg-secondary text-center">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-12">
+            <h1><a class="text-light">
+				CampNet: Context-Aware Mask Prediction for End-to-End Text-Based Speech Editing</a></h1>
+            <p>
+              <div class="row">
+                <div class="col-md col-sm-12"><a class="text-light">Tao Wang (tao.wang@nlpr.ia.ac.cn)</a> </div>
+              </div>
+            </p>
+			<p><a class="text-light">National Laboratory of Pattern Recognition, CASIA, Beijing, China<br>
+                CAS Center for Excellence in Brain Science and Intelligence Technology, Beijing, China<br>
+				School of Artificial Intelligence, University of Chinese Academy of Sciences, Beijing, China
+				</p></a>
+				
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  
+  <main>
+    <div class="container">
+      <div class="row" id="intro">
+        <div class="col">
+          <h2>Messages</h2>
+          <div>
+            <p>This page shows the samples in the paper "<b>CampNet: Context-Aware Mask Prediction for End-to-End Text-Based Speech Editing</b>".
+			<p>
+			Experiments were based on <b>VCTK</b> and <b>LibriTTS dataset</b>. All test samples have not appeared in the training set and validation set. 
+			</p>
+			<p>
+			 </div>
+        </div>
+      </div>
+      <hr>
+
+
+
+
+		  
+		  <h3>1: Deletion, insertion and replacement of text-based speech editing based on CampNet</h3>
+				 
+                  <div class="big-screen">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th width="12%" >speaker</th>
+                          <th width="22%">Original</th>
+                          <th width="22%">Delete some words</th>
+						  <th width="22%">Replace some words with new words</th>
+						  <th width="22%">Insert some words</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+						
+						
+      <th  scope="row">p374 (male) <br> seen speaker</th>
+						  
+                          <td> 
+                            <audio controls>
+                              <source src="./audio/p374_007.wav" type="audio/wav" />
+                            </audio><br><i> The rainbow is a division of white light into many beautiful colors.</i>
+                          </td>
+						  
+						  <td>
+                            <audio controls>
+                              <source src="./audio/p374_0070.wav" type="audio/wav" />
+                            </audio><br><i>The rainbow is a  <font size="4"  color="red"><strike>division of</strike></font> white  light into many beautiful colors.</i>
+                          </td>
+						  
+                          <td>
+                            <audio controls>
+                              <source src="./audio/p374_0071.wav" type="audio/wav" />
+                            </audio><br><i>The rainbow is a division of <font size="4"  color="red">black (<strike>white</strike>)</font>  light into many beautiful colors.</i>
+                          </td>
+
+						  <td>
+                            <audio controls>
+                              <source src="./audio/p374_0072.wav" type="audio/wav" />
+                            </audio><br><i>The rainbow is <font size="4"  color="red">just</font> a division of white light into many beautiful colors.</i>
+                          </td>
+						  
+                       
+						
+						<tr>
+						<th  style="border-top-style:none" scope="row"></th>
+						    <td style="border-top-style:none"> 
+                            <audio controls>
+                              <source src="./audio/p374_017.wav" type="audio/wav" />
+                            </audio><br><i> Others have tried to explain the phenomenon physically.</i>
+                          </td>
+                          <td style="border-top-style:none">
+                            <audio controls>
+                              <source src="./audio/p374_0170.wav" type="audio/wav" />
+                            </audio><br><i> Others have tried to explain <font size="4"  color="red"><strike>the phenomenon</strike></font> physically.</i>
+                          </td>		
+						  
+				          <td style="border-top-style:none">
+                            <audio controls>
+                              <source src="./audio/p374_0171.wav" type="audio/wav" />
+                            </audio><br><i> Others have tried to <font size="4"  color="red">translate (<strike>explain</strike>)</font> the phenomenon physically.</i>
+                          </td>			  
+						  
+				          <td style="border-top-style:none">
+                            <audio controls>
+                              <source src="./audio/p374_0172.wav" type="audio/wav" />
+                            </audio><br><i> Others have tried to explain the <font size="4"  color="red">very weird</font> phenomenon physically.</i>
+                          </td>	
+						</tr>						
+						
+						
+                          <th  scope="row">p362 (female) <br> seen speaker</th>
+						  
+                          <td> 
+                            <audio controls>
+                              <source src="./audio/p362_007.wav" type="audio/wav" />
+                            </audio><br><i> The rainbow is a division of white light into many beautiful colors.</i>
+                          </td>
+						  
+						  <td>
+                            <audio controls>
+                              <source src="./audio/p362_0070.wav" type="audio/wav" />
+                            </audio><br><i>The rainbow is a  <font size="4"  color="red"><strike>division of</strike></font> white  light into many beautiful colors.</i>
+                          </td>
+						  
+                          <td>
+                            <audio controls>
+                              <source src="./audio/p362_0071.wav" type="audio/wav" />
+                            </audio><br><i>The rainbow is a division of <font size="4"  color="red">black (<strike>white</strike>)</font>  light into many beautiful colors.</i>
+                          </td>
+
+						  <td>
+                            <audio controls>
+                              <source src="./audio/p362_0072.wav" type="audio/wav" />
+                            </audio><br><i>The rainbow is <font size="4"  color="red">just</font> a division of white light into many beautiful colors.</i>
+                          </td>
+						  
+                       
+						
+						<tr>
+						<th  style="border-top-style:none" scope="row"></th>
+						    <td style="border-top-style:none"> 
+                            <audio controls>
+                              <source src="./audio/p362_017.wav" type="audio/wav" />
+                            </audio><br><i> Others have tried to explain the phenomenon physically.</i>
+                          </td>
+                          <td style="border-top-style:none">
+                            <audio controls>
+                              <source src="./audio/p362_0170.wav" type="audio/wav" />
+                            </audio><br><i> Others have tried to explain <font size="4"  color="red"><strike>the phenomenon</strike></font> physically.</i>
+                          </td>		
+						  
+				          <td style="border-top-style:none">
+                            <audio controls>
+                              <source src="./audio/p362_0171.wav" type="audio/wav" />
+                            </audio><br><i> Others have tried to <font size="4"  color="red">translate (<strike>explain</strike>)</font> the phenomenon physically.</i>
+                          </td>			  
+						  
+				          <td style="border-top-style:none">
+                            <audio controls>
+                              <source src="./audio/p362_0172.wav" type="audio/wav" />
+                            </audio><br><i> Others have tried to explain the <font size="4"  color="red">very weird</font> phenomenon physically.</i>
+                          </td>	
+						</tr>
+
+
+  
+                     <th  scope="row">p226 (male) <br> unseen speaker <br> one-shot </th>
+						  
+                          <td> 
+                            <audio controls>
+                              <source src="./audio/p226_007.wav" type="audio/wav" />
+                            </audio><br><i> The rainbow is a division of white light into many beautiful colors.</i>
+                          </td>
+						  
+						  <td>
+                            <audio controls>
+                              <source src="./audio/p226_0070.wav" type="audio/wav" />
+                            </audio><br><i>The rainbow is a  <font size="4"  color="red"><strike>division of</strike></font> white  light into many beautiful colors.</i>
+                          </td>
+						  
+                          <td>
+                            <audio controls>
+                              <source src="./audio/p226_0071.wav" type="audio/wav" />
+                            </audio><br><i>The rainbow is a division of <font size="4"  color="red">black (<strike>white</strike>)</font>  light into many beautiful colors.</i>
+                          </td>
+
+						  <td>
+                            <audio controls>
+                              <source src="./audio/p226_0072.wav" type="audio/wav" />
+                            </audio><br><i>The rainbow is <font size="4"  color="red">just</font> a division of white light into many beautiful colors.</i>
+                          </td>
+						  
+                       
+						
+						<tr>
+						<th  style="border-top-style:none" scope="row"></th>
+						    <td style="border-top-style:none"> 
+                            <audio controls>
+                              <source src="./audio/p226_017.wav" type="audio/wav" />
+                            </audio><br><i> Others have tried to explain the phenomenon physically.</i>
+                          </td>
+                          <td style="border-top-style:none">
+                            <audio controls>
+                              <source src="./audio/p226_0170.wav" type="audio/wav" />
+                            </audio><br><i> Others have tried to explain <font size="4"  color="red"><strike>the phenomenon</strike></font> physically.</i>
+                          </td>		
+						  
+				          <td style="border-top-style:none">
+                            <audio controls>
+                              <source src="./audio/p226_0171.wav" type="audio/wav" />
+                            </audio><br><i> Others have tried to <font size="4"  color="red">translate (<strike>explain</strike>)</font> the phenomenon physically.</i>
+                          </td>			  
+						  
+				          <td style="border-top-style:none">
+                            <audio controls>
+                              <source src="./audio/p226_0172.wav" type="audio/wav" />
+                            </audio><br><i> Others have tried to explain the <font size="4"  color="red">very weird</font> phenomenon physically.</i>
+                          </td>	
+						</tr>						  
+
+
+
+                          <th  scope="row">p225 (female) <br> unseen speaker <br> one-shot </th>
+						  
+                          <td> 
+                            <audio controls>
+                              <source src="./audio/p225_007.wav" type="audio/wav" />
+                            </audio><br><i> The rainbow is a division of white light into many beautiful colors.</i>
+                          </td>
+						  
+						  <td>
+                            <audio controls>
+                              <source src="./audio/p225_0070.wav" type="audio/wav" />
+                            </audio><br><i>The rainbow is a  <font size="4"  color="red"><strike>division of</strike></font> white  light into many beautiful colors.</i>
+                          </td>
+						  
+                          <td>
+                            <audio controls>
+                              <source src="./audio/p225_0071.wav" type="audio/wav" />
+                            </audio><br><i>The rainbow is a division of <font size="4"  color="red">black (<strike>white</strike>)</font>  light into many beautiful colors.</i>
+                          </td>
+
+						  <td>
+                            <audio controls>
+                              <source src="./audio/p225_0072.wav" type="audio/wav" />
+                            </audio><br><i>The rainbow is <font size="4"  color="red">just</font> a division of white light into many beautiful colors.</i>
+                          </td>
+						  
+                       
+						
+						<tr>
+						<th  style="border-top-style:none" scope="row"></th>
+						    <td style="border-top-style:none"> 
+                            <audio controls>
+                              <source src="./audio/p225_017.wav" type="audio/wav" />
+                            </audio><br><i> Others have tried to explain the phenomenon physically.</i>
+                          </td>
+                          <td style="border-top-style:none">
+                            <audio controls>
+                              <source src="./audio/p225_0170.wav" type="audio/wav" />
+                            </audio><br><i> Others have tried to explain <font size="4"  color="red"><strike>the phenomenon</strike></font> physically.</i>
+                          </td>		
+						  
+				          <td style="border-top-style:none">
+                            <audio controls>
+                              <source src="./audio/p225_0171.wav" type="audio/wav" />
+                            </audio><br><i> Others have tried to <font size="4"  color="red">translate (<strike>explain</strike>)</font> the phenomenon physically.</i>
+                          </td>			  
+						  
+				          <td style="border-top-style:none">
+                            <audio controls>
+                              <source src="./audio/p225_0172.wav" type="audio/wav" />
+                            </audio><br><i> Others have tried to explain the <font size="4"  color="red">very weird</font> phenomenon physically.</i>
+                          </td>	
+						</tr>						
+						
+
+
+
+
+     
+												
+						
+						
+		
+								
+                      </tbody>
+                    </table>
+                  </div>				 
+				  
+				  
+				  <hr>
+ 
+
+
+
+
+
+
+
+
+
+  <h3>2: Comparison between CampNet and Other Systems (Synth, Voco and Edit on VCTK and LibriTTS dataset) (Replacement operation)</h3>
+				 
+                  <div class="big-screen">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th width="20%">Original</th>
+                          <th width="20%">Synth</th>
+						  <th width="20%">VoCo</th>
+						  <th width="20%">Edit</th>
+						  <th width="20%">CampNet</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+
+						<tr>
+                          <td> 
+                            <audio controls>
+                              <source src="./audio/exp2/p225_002_org.wav" type="audio/wav" />
+                            </audio><br><i> Ask her to <font size="4"  color="red">bring</font> these things with her from the store. (VCTK testdata)</i>
+                          </td>
+						  
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp2/p225_002_synth.wav" type="audio/wav" />
+                            </audio><br><i> Ask her to <font size="4"  color="red">bring</font> these things with her from the store.</i>
+                          </td>
+						  
+                          <td>
+                            <audio controls>
+                               <source src="./audio/exp2/p225_002_voco.wav" type="audio/wav" />
+                            </audio><br><i> Ask her to <font size="4"  color="red">bring</font> these things with her from the store.</i>
+                          </td>
+
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp2/p225_002_edit.wav" type="audio/wav" />
+                            </audio><br><i> Ask her to <font size="4"  color="red">bring</font> these things with her from the store.</i>
+                          </td>
+
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp2/p225_002_camp.wav" type="audio/wav" />
+                            </audio><br><i> Ask her to <font size="4"  color="red">bring</font> these things with her from the store.</i>
+                          </td>						       
+						</tr>				
+
+
+    <tr>
+                          <td> 
+                            <audio controls>
+                              <source src="./audio/exp2/p226_004_org.wav" type="audio/wav" />
+                            </audio><br><i> We also need a small <font size="4"  color="red">plastic</font> snake and a big toy frog for the kids. (VCTK testdata)</i>
+                          </td>
+						  
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp2/p226_004_synth.wav" type="audio/wav" />
+                            </audio><br><i> We also need a small <font size="4"  color="red">plastic</font> snake and a big toy frog for the kids.</i>
+                          </td>
+						  
+                          <td>
+                            <audio controls>
+                               <source src="./audio/exp2/p226_004_voco.wav" type="audio/wav" />
+                            </audio><br><i> We also need a small <font size="4"  color="red">plastic</font> snake and a big toy frog for the kids.</i>
+                          </td>
+
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp2/p226_004_edit.wav" type="audio/wav" />
+                            </audio><br><i> We also need a small <font size="4"  color="red">plastic</font> snake and a big toy frog for the kids.</i>
+                          </td>
+
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp2/p226_004_camp.wav" type="audio/wav" />
+                            </audio><br><i> We also need a small <font size="4"  color="red">plastic</font> snake and a big toy frog for the kids.</i>
+                          </td>						  
+                       </tr>						
+						
+						
+
+						<tr>
+                          <td> 
+                            <audio controls>
+                              <source src="./audio/exp2/12_2136_5140_000020_000001_org.wav" type="audio/wav" />
+                            </audio><br><i> He says your <font size="4"  color="red">mamma</font> is not there. (LibriTTS testdata)</i>
+                          </td>
+						  
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp2/12_2136_5140_000020_000001_synth.wav" type="audio/wav" />
+                            </audio><br><i> He says your <font size="4"  color="red">mamma</font> is not there.</i>
+                          </td>
+						  
+                          <td>
+                            <audio controls>
+                               <source src="./audio/exp2/12_2136_5140_000020_000001_voco.wav" type="audio/wav" />
+                            </audio><br><i> He says your <font size="4"  color="red">mamma</font> is not there.</i>
+                          </td>
+
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp2/12_2136_5140_000020_000001_edit.wav" type="audio/wav" />
+                            </audio><br><i> He says your <font size="4"  color="red">mamma</font> is not there.</i>
+                          </td>
+
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp2/12_2136_5140_000020_000001_camp.wav" type="audio/wav" />
+                            </audio><br><i> He says your <font size="4"  color="red">mamma</font> is not there.</i>
+                          </td>						       
+						</tr>		
+					  
+
+						<tr>
+                          <td> 
+                            <audio controls>
+                              <source src="./audio/exp2/20_5538_64717_000002_000004_org.wav" type="audio/wav" />
+                            </audio><br><i> We walked in the <font size="4"  color="red">meadows</font>, along the streams that watered them. (LibriTTS testdata)</i>
+                          </td>
+						  
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp2/20_5538_64717_000002_000004_synth.wav" type="audio/wav" />
+                            </audio><br><i> We walked in the <font size="4"  color="red">meadows</font>, along the streams that watered them.</i>
+                          </td>
+						  
+                          <td>
+                            <audio controls>
+                               <source src="./audio/exp2/20_5538_64717_000002_000004_voco.wav" type="audio/wav" />
+                            </audio><br><i> We walked in the <font size="4"  color="red">meadows</font>, along the streams that watered them.</i>
+                          </td>
+
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp2/20_5538_64717_000002_000004_edit.wav" type="audio/wav" />
+                            </audio><br><i> We walked in the <font size="4"  color="red">meadows</font>, along the streams that watered them.</i>
+                          </td>
+
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp2/20_5538_64717_000002_000004_camp.wav" type="audio/wav" />
+                            </audio><br><i> We walked in the <font size="4"  color="red">meadows</font>, along the streams that watered them.</i>
+                          </td>						       
+						</tr>	
+		
+                      </tbody>
+                    </table>
+                  </div>				 
+				  
+
+		  <hr>
+
+
+  <h3>3: Comparison of coarse-to-fine decoding</h3>
+				 
+                  <div class="big-screen">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th width="20%">Original</th>
+                          <th width="20%">Onedecoder</th>
+						  <th width="20%">Coarsedecoder</th>
+						  <th width="20%">Finedecoder</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+
+					  
+	<tr>
+                          <td> 
+                            <audio controls>
+                              <source src="./audio/exp3/p225_002.wav" type="audio/wav" />
+                            </audio><br><i> Ask her to <font size="4"  color="red">bring</font> these things with her from the store.</i>
+                          </td>
+						  
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp3/p225_002_onedecoder.wav" type="audio/wav" />
+                            </audio><br><i> Ask her to <font size="4"  color="red">bring</font> these things with her from the store.</i>
+                          </td>
+						  
+                          <td>
+                            <audio controls>
+                               <source src="./audio/exp3/p225_002_coarse.wav" type="audio/wav" />
+                            </audio><br><i> Ask her to <font size="4"  color="red">bring</font> these things with her from the store.</i>
+                          </td>
+
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp3/p225_002_fine.wav" type="audio/wav" />
+                            </audio><br><i> Ask her to <font size="4"  color="red">bring</font> these things with her from the store.</i>
+                          </td>
+						</tr>											  
+					  
+					  
+					  
+					  
+						<tr>
+                          <td> 
+                            <audio controls>
+                              <source src="./audio/exp3/p225_020.wav" type="audio/wav" />
+                            </audio><br><i> Many <font size="4"  color="red">complicated</font> ideas about the rainbow have been formed.</i>
+                          </td>
+						  
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp3/p225_020_onedecoder.wav" type="audio/wav" />
+                            </audio><br><i> Many <font size="4"  color="red">complicated</font> ideas about the rainbow have been formed.</i>
+                          </td>
+						  
+                          <td>
+                            <audio controls>
+                               <source src="./audio/exp3/p225_020_coarse.wav" type="audio/wav" />
+                            </audio><br><i> Many <font size="4"  color="red">complicated</font> ideas about the rainbow have been formed.</i>
+                          </td>
+
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp3/p225_020_fine.wav" type="audio/wav" />
+                            </audio><br><i> Many <font size="4"  color="red">complicated</font> ideas about the rainbow have been formed.</i>
+                          </td>
+						</tr>				
+
+
+						
+						
+
+						<tr>
+                          <td> 
+                            <audio controls>
+                              <source src="./audio/exp3/p226_011.wav" type="audio/wav" />
+                            </audio><br><i> When a man looks for <font size="4"  color="red">something</font> beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow.</i>
+                          </td>
+						  
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp3/p226_011_onedecoder.wav" type="audio/wav" />
+                            </audio><br><i> When a man looks for <font size="4"  color="red">something</font> beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow.</i>
+                          </td>
+						  
+                          <td>
+                            <audio controls>
+                               <source src="./audio/exp3/p226_011_coarse.wav" type="audio/wav" />
+                            </audio><br><i> When a man looks for <font size="4"  color="red">something</font> beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow.</i>
+                          </td>
+
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp3/p226_011_fine.wav" type="audio/wav" />
+                            </audio><br><i> When a man looks for <font size="4"  color="red">something</font> beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow.</i>
+                          </td>
+						</tr>				
+	
+
+						<tr>
+                          <td> 
+                            <audio controls>
+                              <source src="./audio/exp3/p226_007.wav" type="audio/wav" />
+                            </audio><br><i> The rainbow is a <font size="4"  color="red">division</font> of white light into many beautiful colors.</i>
+                          </td>
+						  
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp3/p226_007_onedecoder.wav" type="audio/wav" />
+                            </audio><br><i> The rainbow is a <font size="4"  color="red">division</font> of white light into many beautiful colors.</i>
+                          </td>
+						  
+                          <td>
+                            <audio controls>
+                               <source src="./audio/exp3/p226_007_coarse.wav" type="audio/wav" />
+                            </audio><br><i> The rainbow is a <font size="4"  color="red">division</font> of white light into many beautiful colors.</i>
+                          </td>
+
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp3/p226_007_fine.wav" type="audio/wav" />
+                            </audio><br><i> The rainbow is a <font size="4"  color="red">division</font> of white light into many beautiful colors.</i>
+                          </td>
+						</tr>		
+                      </tbody>
+                    </table>
+                  </div>			  
+      <hr>
+	  
+	  
+	  
+	  
+  <h3>4: few-shot and one-shot based on CampNet</h3>
+				 
+                  <div class="big-screen">
+                    <table class="table">
+                      <thead>
+                        <tr>
+						  <th width="8%">Speaker</th>
+                          <th width="18%">Original</th>
+                          <th width="18%">One-shot</th>
+						  <th width="18%">One-shot 1utts-finetune</th>
+						  <th width="18%">few-shot 50utts-finetune</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+	<tr>
+<th  scope="row">p225 (female)</th>
+                          <td> 
+                            <audio controls>
+                              <source src="./audio/exp4/p225_005.wav" type="audio/wav" />
+                            </audio><br><i> She can scoop these things into three red bags, and we will go meet her <font size="4"  color="red">Wednesday</font> at the train station.</i>
+                          </td>
+						  
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp4/p225_005_0.wav" type="audio/wav" />
+                            </audio><br><i> She can scoop these things into three red bags, and we will go meet her <font size="4"  color="red">Wednesday</font> at the train station.</i>
+                          </td>
+						  
+                          <td>
+                            <audio controls>
+                               <source src="./audio/exp4/p225_005_1.wav" type="audio/wav" />
+                           </audio><br><i> She can scoop these things into three red bags, and we will go meet her <font size="4"  color="red">Wednesday</font> at the train station.</i>
+                          </td>
+
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp4/p225_005_50.wav" type="audio/wav" />
+                           </audio><br><i> She can scoop these things into three red bags, and we will go meet her <font size="4"  color="red">Wednesday</font> at the train station.</i>
+                          </td>
+						</tr>						  
+					  
+
+	<tr>
+	<th  scope="row">p225 (female)</th>
+                          <td> 
+                            <audio controls>
+                              <source src="./audio/exp4/p225_011.wav" type="audio/wav" />
+                            </audio><br><i> When a man looks for <font size="4"  color="red">something</font>  beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow.</i>
+                          </td>
+						  
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp4/p225_011_0.wav" type="audio/wav" />
+                           </audio><br><i> When a man looks for <font size="4"  color="red">something</font>  beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow.</i>
+                          </td>
+						  
+                          <td>
+                            <audio controls>
+                               <source src="./audio/exp4/p225_011_1.wav" type="audio/wav" />
+                           </audio><br><i> When a man looks for <font size="4"  color="red">something</font>  beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow.</i>
+                          </td>
+
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp4/p225_011_50.wav" type="audio/wav" />
+                            </audio><br><i> When a man looks for <font size="4"  color="red">something</font>  beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow.</i>
+                          </td>
+						</tr>											  
+					  
+						  
+					  
+	<tr>
+<th  scope="row">p226 (male)</th>
+                          <td> 
+                            <audio controls>
+                              <source src="./audio/exp4/p226_005.wav" type="audio/wav" />
+                            </audio><br><i> She can scoop these things into three red bags, and we will go meet her <font size="4"  color="red">Wednesday</font> at the train station.</i>
+                          </td>
+						  
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp4/p226_005_0.wav" type="audio/wav" />
+                            </audio><br><i> She can scoop these things into three red bags, and we will go meet her <font size="4"  color="red">Wednesday</font> at the train station.</i>
+                          </td>
+						  
+                          <td>
+                            <audio controls>
+                               <source src="./audio/exp4/p226_005_1.wav" type="audio/wav" />
+                           </audio><br><i> She can scoop these things into three red bags, and we will go meet her <font size="4"  color="red">Wednesday</font> at the train station.</i>
+                          </td>
+
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp4/p226_005_50.wav" type="audio/wav" />
+                           </audio><br><i> She can scoop these things into three red bags, and we will go meet her <font size="4"  color="red">Wednesday</font> at the train station.</i>
+                          </td>
+						</tr>						  
+					  
+
+	<tr>
+	<th  scope="row">p226 (male)</th>
+                          <td> 
+                            <audio controls>
+                              <source src="./audio/exp4/p226_011.wav" type="audio/wav" />
+                            </audio><br><i> When a man looks for <font size="4"  color="red">something</font>  beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow.</i>
+                          </td>
+						  
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp4/p226_011_0.wav" type="audio/wav" />
+                           </audio><br><i> When a man looks for <font size="4"  color="red">something</font>  beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow.</i>
+                          </td>
+						  
+                          <td>
+                            <audio controls>
+                               <source src="./audio/exp4/p226_011_1.wav" type="audio/wav" />
+                           </audio><br><i> When a man looks for <font size="4"  color="red">something</font>  beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow.</i>
+                          </td>
+
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp4/p226_011_50.wav" type="audio/wav" />
+                            </audio><br><i> When a man looks for <font size="4"  color="red">something</font>  beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow.</i>
+                          </td>
+						</tr>										
+                      </tbody>
+                    </table>
+                  </div>			  	  
+	  
+	  
+      <hr>	        <hr>
+      <!-- <div class="row" id="contact">
+          <div class="col">
+            <h2>Contact</h2>
+            <div></div>
+          </div>
+        </div> -->
+    </div>
+  </main>
+  <footer class="bg-secondary text-light mt-4 pt-3 pb-2 ">
+    <div class="container">
+      <p class="text-center">
+        <small>
+          CampNet: Context-Aware Mask Prediction for End-to-End Text-Based Speech Editing
+          <br>
+          <a class="text-light"><strong>Tao Wang</strong></a> |
+          tao.wang@nlpr.ia.ac.cn
+        </small>
+      </p>
+    </div>
+  </footer>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
