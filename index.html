@@ -83,12 +83,21 @@
 			 </div>
         </div>
       </div>
-      <hr>
+
+<h5>Content</h5>
+<li><a href="#exp1"><font size="3">1: Deletion, insertion and replacement of text-based speech editing based on CampNet</font></a>
+<li><a href="#exp2"><font size="3">2: Comparison between CampNet and Other Systems</font></a>
+<li><a href="#exp3"><font size="3">3: Comparison with full TTS system</font></a>
+<li><a href="#exp5"><font size="3">4: Comparison between one-step generation and word-level autoregressive generation</font></a>
+<li><a href="#exp4"><font size="3">5: Comparison of coarse-to-fine decoding</font></a>
+<li><a href="#exp6"><font size="3">6: few-shot and one-shot based on CampNet</font></a>
+<li><a href="#exp7"><font size="3">7: Robustness test of CampNet on the mask area's duration at the inference stage</font></a>
+  <hr>
 
 
 
 
-		  
+		  <a name="exp1">
 		  <h3>1: Deletion, insertion and replacement of text-based speech editing based on CampNet</h3>
 				 
                   <div class="big-screen">
@@ -400,7 +409,7 @@
 
 
 
-
+<a name="exp2">
   <h3>2: Comparison between CampNet and Other Systems (Synth, Voco and Edit on VCTK and LibriTTS dataset) (Replacement operation)</h3>
 				 
                   <div class="big-screen">
@@ -557,7 +566,7 @@
 		  <hr>
 
 
-      
+     <a name="exp3"> 
  <h3>3: Comparison with full TTS system (replacement operation)</h3>
 <b><p> Note: In this experiment, 	all the speakers are unseen in the training set. The TTS system uses global style tokens(GST) to guide the synthesis of target speaker's voice (one-shot learning).			 </b></p>
                   <div class="big-screen">
@@ -673,8 +682,124 @@
 
 
 
+	  
 
-  <h3>4: Comparison of coarse-to-fine decoding</h3>
+
+
+<a name="exp4">
+ <h3>4: Comparison with one-step generation and word-level autoregressive generation methods  (insert long text) (unseen speaker)</h3>                  <div class="big-screen">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th width="20%">Original</th>
+                          <th width="20%">One-step generation</th>
+						  <th width="20%">word-level autoregressive generation</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+
+
+
+<tr>
+
+<td>
+                            <audio controls>
+                              <source src="./audio/p374_007.wav" type="audio/wav" />
+                            </audio><br><i> The rainbow is a division of white light into many beautiful colors.</i>
+                          </td>
+
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp5/p374_0073multi.wav" type="audio/wav" />
+                            </audio><br><i>The rainbow is <font size="4"  color="red">a colorful light and just</font> a division of white light into many beautiful colors.</i>
+                          </td>						  
+                       
+
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp5/p374_0072multi.wav" type="audio/wav" />
+                            </audio><br><i>The rainbow is <font size="4"  color="red">a colorful light and just</font> a division of white light into many beautiful colors.</i>
+                          </td>						  
+</tr>						
+                       
+						
+						<tr>
+						 <td>
+                            <audio controls>
+                              <source src="./audio/p374_017.wav" type="audio/wav" />
+                            </audio><br><i> Others have tried to explain the phenomenon physically.</i>
+                          </td>
+                         
+						  
+						  	<td>
+                            <audio controls>
+                              <source src="./audio/exp5/p374_0173multi.wav" type="audio/wav" />
+                            </audio><br><i>Others have tried to explain the <font size="4"  color="red">very very very very very weird</font> phenomenon physically.</i>
+                          </td>		
+						  
+						  	<td>
+                            <audio controls>
+                              <source src="./audio/exp5/p374_0172multi.wav" type="audio/wav" />
+                            </audio><br><i>Others have tried to explain the <font size="4"  color="red">very very very very very weird</font> phenomenon physically.</i>
+                          </td>		
+						  
+						</tr>						
+
+						
+						  <tr>
+                          <td> 
+                            <audio controls>
+                              <source src="./audio/p362_007.wav" type="audio/wav" />
+                            </audio><br><i> The rainbow is a division of white light into many beautiful colors.</i>
+                          </td>
+						  
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp5/p362_0073multi.wav" type="audio/wav" />
+                            </audio><br><i>The rainbow is <font size="4"  color="red">a colorful light and just</font> a division of white light into many beautiful colors.</i>
+                          </td>		
+						  
+						  <td>
+                            <audio controls>
+                              <source src="./audio/exp5/p362_0072multi.wav" type="audio/wav" />
+                            </audio><br><i>The rainbow is <font size="4"  color="red">a colorful light and just</font> a division of white light into many beautiful colors.</i>
+                          </td>		                       
+						</tr>	
+						
+						
+						<tr>
+						<td>
+                            <audio controls>
+                              <source src="./audio/p362_017.wav" type="audio/wav" />
+                            </audio><br><i> Others have tried to explain the phenomenon physically.</i>
+                          </td>	  
+						  
+						  	<td>
+                            <audio controls>
+                              <source src="./audio/exp5/p362_0173multi.wav" type="audio/wav" />
+                            </audio><br><i>Others have tried to explain the <font size="4"  color="red">very very very very very weird</font> phenomenon physically.</i>
+                          </td>		
+						  
+						  	<td>
+                            <audio controls>
+                              <source src="./audio/exp5/p362_0172multi.wav" type="audio/wav" />
+                            </audio><br><i>Others have tried to explain the <font size="4"  color="red">very very very very very weird</font> phenomenon physically.</i>
+                          </td>		
+						  
+						</tr>
+                        
+                      </tbody>
+                    </table>
+                  </div>		
+		  <hr>
+
+
+
+
+
+<a name="exp5">
+  <h3>5: Comparison of coarse-to-fine decoding</h3>
 				 
                   <div class="big-screen">
                     <table class="table">
@@ -805,126 +930,10 @@
                     </table>
                   </div>			  
       <hr>
-	  
-
-
-
-
- <h3>5: Comparison with one-step generation and word-level autoregressive generation methods  (insert long text) (unseen speaker)</h3>                  <div class="big-screen">
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th width="20%">Original</th>
-                          <th width="20%">One-step generation</th>
-						  <th width="20%">word-level autoregressive generation</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-
-
-
-
-<tr>
-
-<td>
-                            <audio controls>
-                              <source src="./audio/p374_007.wav" type="audio/wav" />
-                            </audio><br><i> The rainbow is a division of white light into many beautiful colors.</i>
-                          </td>
-
-						  <td>
-                            <audio controls>
-                              <source src="./audio/exp5/p374_0073multi.wav" type="audio/wav" />
-                            </audio><br><i>The rainbow is <font size="4"  color="red">a colorful light and just</font> a division of white light into many beautiful colors.</i>
-                          </td>						  
-                       
-
-						  <td>
-                            <audio controls>
-                              <source src="./audio/exp5/p374_0072multi.wav" type="audio/wav" />
-                            </audio><br><i>The rainbow is <font size="4"  color="red">a colorful light and just</font> a division of white light into many beautiful colors.</i>
-                          </td>						  
-</tr>						
-                       
-						
-						<tr>
-						 <td>
-                            <audio controls>
-                              <source src="./audio/p374_017.wav" type="audio/wav" />
-                            </audio><br><i> Others have tried to explain the phenomenon physically.</i>
-                          </td>
-                         
-						  
-						  	<td>
-                            <audio controls>
-                              <source src="./audio/exp5/p374_0173multi.wav" type="audio/wav" />
-                            </audio><br><i>Others have tried to explain the <font size="4"  color="red">very very very very very weird</font> phenomenon physically.</i>
-                          </td>		
-						  
-						  	<td>
-                            <audio controls>
-                              <source src="./audio/exp5/p374_0172multi.wav" type="audio/wav" />
-                            </audio><br><i>Others have tried to explain the <font size="4"  color="red">very very very very very weird</font> phenomenon physically.</i>
-                          </td>		
-						  
-						</tr>						
-
-						
-						  <tr>
-                          <td> 
-                            <audio controls>
-                              <source src="./audio/p362_007.wav" type="audio/wav" />
-                            </audio><br><i> The rainbow is a division of white light into many beautiful colors.</i>
-                          </td>
-						  
-						  <td>
-                            <audio controls>
-                              <source src="./audio/exp5/p362_0073multi.wav" type="audio/wav" />
-                            </audio><br><i>The rainbow is <font size="4"  color="red">a colorful light and just</font> a division of white light into many beautiful colors.</i>
-                          </td>		
-						  
-						  <td>
-                            <audio controls>
-                              <source src="./audio/exp5/p362_0072multi.wav" type="audio/wav" />
-                            </audio><br><i>The rainbow is <font size="4"  color="red">a colorful light and just</font> a division of white light into many beautiful colors.</i>
-                          </td>		                       
-						</tr>	
-						
-						
-						<tr>
-						<td>
-                            <audio controls>
-                              <source src="./audio/p362_017.wav" type="audio/wav" />
-                            </audio><br><i> Others have tried to explain the phenomenon physically.</i>
-                          </td>	  
-						  
-						  	<td>
-                            <audio controls>
-                              <source src="./audio/exp5/p362_0173multi.wav" type="audio/wav" />
-                            </audio><br><i>Others have tried to explain the <font size="4"  color="red">very very very very very weird</font> phenomenon physically.</i>
-                          </td>		
-						  
-						  	<td>
-                            <audio controls>
-                              <source src="./audio/exp5/p362_0172multi.wav" type="audio/wav" />
-                            </audio><br><i>Others have tried to explain the <font size="4"  color="red">very very very very very weird</font> phenomenon physically.</i>
-                          </td>		
-						  
-						</tr>
-                        
-                      </tbody>
-                    </table>
-                  </div>		
-		  <hr>
-
-
-
-
-
 
 	  
 	  
-	  
+	  <a name="exp6">
   <h3>6: few-shot and one-shot based on CampNet</h3>
 				 
                   <div class="big-screen">
@@ -1057,7 +1066,7 @@
 
       		  <hr>  
 	  
-	  
+	  <a name="exp7">  
  <h3>7:  Robustness test of CampNet on the mask area's duration  at the inference stage (insertion operation).</font></h3>
 <p><b>
 			Note:   In this experiment, we set different duration for the words to be inserted, and the duration range is large (the maximum duration can be close to three times the minimum duration). 
